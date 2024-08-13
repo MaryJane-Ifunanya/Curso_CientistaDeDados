@@ -1,0 +1,177 @@
+
+
+```{r}
+tempo = read.csv("C:/Users/maryj/anaconda3/tempo.csv", sep = ";", na.strings = "", stringsAsFactors = T)
+head(tempo)
+
+```
+
+```{r}
+summary(tempo)
+```
+
+```{r}
+tail(tempo)
+```
+
+```{r}
+unique(tempo$Aparencia)
+```
+
+
+```{r}
+tempo[tempo$Temperatura < 0 | tempo$Temperatura >100,]$Temperatura
+```
+
+```{r}
+median(tempo$Temperatura)
+
+```
+
+```{r}
+tempo[tempo$Temperatura < 0 | tempo$Temperatura >130,]$Temperatura = median(tempo$Temperatura)
+
+```
+
+```{r}
+tempo[tempo$Temperatura < 0 | tempo$Temperatura >130,]$Temperatura
+summary(tempo$Temperatura)
+```
+
+```{r}
+summary(tempo$Umidade)
+```
+
+```{r}
+tempo[is.na(tempo$Umidade),]
+```
+
+```{r}
+tempo[tempo$Umidade < 0 | tempo$Umidade > 100,]$Umidade
+```
+
+```{r}
+counts = table(tempo$Aparencia)
+counts
+```
+
+```{r}
+barplot(counts, main = "Aparencia", xlab="Aparenc")
+```
+
+```{r}
+counts = table(tempo$Vento)
+counts
+```
+
+```{r}
+barplot(counts, main = "Vento", xlab = "vento")
+```
+
+```{r}
+counts = table(tempo$Jogar)
+counts
+```
+
+```{r}
+barplot(counts, main = "Jogar", xlab = "jogar")
+```
+
+```{r}
+summary(tempo$Temperatura)
+```
+
+```{r}
+boxplot(tempo$Temperatura)
+```
+
+```{r}
+hist(tempo$Temperatura)
+```
+
+```{r}
+summary(tempo$Umidade)
+```
+
+```{r}
+boxplot(tempo$Umidade)
+```
+
+```{r}
+hist(tempo$Umidade)
+```
+
+```{r}
+tempo[!complete.cases(tempo),]
+```
+
+```{r}
+tempo[is.na(tempo$Aparencia),]
+```
+
+```{r}
+summary(tempo$Aparencia)
+```
+
+```{r}
+tempo[tempo$Aparencia == "menos" ,]$Aparencia = "sol"
+```
+
+```{r}
+tempo$Aparencia = factor(tempo$Aparencia)
+summary(tempo$Aparencia)
+
+```
+
+```{r}
+summary(tempo$Temperatura)
+```
+
+```{r}
+tempo[tempo$Temperatura < -130 | tempo$Temperatura > 130 ,]$Temperatura
+```
+```{r}
+summary(tempo$Umidade)
+```
+
+```{r}
+tempo[tempo$Umidade < 0 | tempo$Umidade > 100 ,]$Umidade
+```
+
+```{r}
+tempo[is.na(tempo$Umidade),]
+```
+
+
+
+```{r}
+tempo[is.na(tempo$Umidade),]$Umidade = median(tempo$Umidade,na.rm = T)
+
+tempo[tempo$Umidade < 0 | tempo$Umidade > 100,]$Umidade = median(tempo$Umidade)
+```
+
+```{r}
+summary(tempo$Vento)
+```
+```{r}
+summary(tempo$Umidade)
+```
+
+```{r}
+tempo[is.na(tempo$Vento),]
+```
+
+```{r}
+tempo[is.na(tempo$Vento),]$Vento = 'FALSO'
+```
+
+```{r}
+summary(tempo$Vento)
+```
+
+```{r}
+head(tempo)
+```
+
+```
+
